@@ -12,3 +12,5 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
+
+gem 'para', github: 'glyph-fr/para'
