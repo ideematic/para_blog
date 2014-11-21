@@ -22,5 +22,4 @@ Gem::Specification.new do |s|
   s.add_dependency 'friendly_id', '~> 5.0.0'
 
   s.add_development_dependency "sqlite3"
-  s.add_development_dependency "friendly_id"
 end
