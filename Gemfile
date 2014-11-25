@@ -14,3 +14,4 @@ gemspec
 # gem 'debugger'
 
 gem 'para', github: 'glyph-fr/para'
+gem 'acts-as-taggable-on', '~> 3.4'
