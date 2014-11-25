@@ -1,5 +1,5 @@
 ParaBlog::Engine.routes.draw do
-  resources :posts do
-    resources :comments
+  resources :posts, only: :show do
+    resources :comments, only: [:show, :create, :index]
   end
 end
