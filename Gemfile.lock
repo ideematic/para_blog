@@ -210,7 +210,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  friendly_id
   para!
   para_blog!
   sqlite3

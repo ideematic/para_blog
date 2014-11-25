@@ -3,7 +3,7 @@ class CreateParaBlogPosts < ActiveRecord::Migration
     create_table :para_blog_posts do |t|
       t.string :title
       t.text :content
-      t.text :slug
+      t.references :component, index: true
 
       t.timestamps
     end

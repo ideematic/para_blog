@@ -3,9 +3,9 @@
 one:
   title: MyString
   content: MyText
-  slug: MyText
+  component_id: 
 
 two:
   title: MyString
   content: MyText
-  slug: MyText
+  component_id: 
