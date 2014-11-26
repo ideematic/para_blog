@@ -22,5 +22,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'friendly_id', '~> 5.0.0'
   s.add_dependency 'acts-as-taggable-on', '~> 3.4'
 
-  s.add_development_dependency "pg"
+  s.add_development_dependency "sqlite3"
 end
