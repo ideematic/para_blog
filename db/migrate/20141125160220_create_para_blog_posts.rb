@@ -5,6 +5,7 @@ class CreateParaBlogPosts < ActiveRecord::Migration
       t.text :content
       t.date :published_on
       t.boolean :active
+      t.text :slug
       t.references :component, index: true
 
       t.timestamps
