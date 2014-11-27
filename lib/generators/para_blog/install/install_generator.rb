@@ -29,7 +29,7 @@ module ParaBlog
 
     def bundle_install
       say 'Bundling installed gems ...'
-      run `bundle`
+      puts `bundle install`
     end
 
     def acts_as_taggable_on_install
