@@ -1,0 +1,5 @@
+= search_form_for @q, builder: SimpleForm::FormBuilder do |form|
+  = form.input :title_cont, required: false
+  = form.input :published_on_gteq, required: false
+  = form.input :published_on_lteq, required: false
+  = form.submit 'Rechercher', class: 'btn btn-primary'

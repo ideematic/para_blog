@@ -1,0 +1,6 @@
+.row
+  .col-lg-3
+    = render partial: 'para_blog/posts/search'
+  .col-lg-9
+    = render @posts
+    = paginate @posts

@@ -1,0 +1,2 @@
+- post.tags.each do |tag|
+  = link_to tag, posts_path(q: { tags_name_eq: tag.name })

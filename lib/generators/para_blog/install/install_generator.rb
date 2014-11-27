@@ -51,6 +51,10 @@ module ParaBlog
       end
     end
 
+    def copy_templates
+      directory 'para_blog', 'app/views/para_blog'
+    end
+
     def mount_engine
       mount_path = ask('Where would you like to mount ParaBlog engine ? [/]').presence || '/'
       gsub_file 'config/routes.rb', /mount Para::Engine.*\'/, ''

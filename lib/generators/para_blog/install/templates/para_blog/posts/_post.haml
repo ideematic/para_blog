@@ -1,0 +1,4 @@
+%h3= link_to post.title, post_path(post)
+%p= post.content.try :html_safe
+
+= render partial: 'para_blog/posts/tags', locals: { post: post }
