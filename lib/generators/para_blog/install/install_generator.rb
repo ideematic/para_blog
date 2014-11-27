@@ -17,7 +17,10 @@ module ParaBlog
       gemfile_contents = File.read(Rails.root.join('Gemfile'))
 
       [
-        ['acts_as_taggable_on']
+        [
+          'acts_as_taggable_on',
+          'ransack'
+        ]
       ].each do |name, version|
         unless gemfile_contents.match(/gem ['"]#{ name }['"]/)
           gem name unless version
@@ -56,8 +59,8 @@ module ParaBlog
     end
 
     def mount_engine
-      mount_path = ask('Where would you like to mount ParaBlog engine ? [/]').presence || '/'
-      gsub_file 'config/routes.rb', /mount Para::Engine.*\'/, ''
+      mount_path = ask('Where would you like to mount ParaBlog engine ? [/blog]').presence || '/blog'
+      gsub_file 'config/routes.rb', /mount ParaBlog::Engine.*\'/, ''
       route "mount ParaBlog::Engine, at: '#{mount_path.match(/^\//) ? mount_path : "/#{mount_path}"}', as: 'para_blog'"
     end
   end
