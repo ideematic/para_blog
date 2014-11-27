@@ -7,5 +7,6 @@
     = form.input :tag_list, input_html: { class: 'selectize-tags' }
     = form.input :active
     = form.input :content, as: :redactor
-    = form.input :comments, as: :nested_many, add_button: false
+    - unless resource.new_record?
+      = form.input :comments, as: :nested_many, add_button: false
   = form.actions
