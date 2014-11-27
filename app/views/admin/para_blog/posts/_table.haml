@@ -1,0 +1,15 @@
+= resources_table(model: model, component: component) do |table|
+  = table.header do
+    = table.header_for(:title)
+    = table.header_for(:content)
+    = table.header_for(:tags)
+
+  = table.rows(resources) do |resource|
+    = table.data_for(resource, :title)
+    = table.data_for(resource, :content)
+    = content_tag(:td) do
+      - if (tags = resource.tag_list).present?
+        = tags.join(', ')
+      - else
+        - #TODO I18n
+        Aucun tag renseigné

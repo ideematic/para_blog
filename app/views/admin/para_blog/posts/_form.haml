@@ -1,0 +1,11 @@
+= para_form_for(resource) do |form|
+  = form.error_notification
+
+  = form.fieldset do
+    = form.input :title
+    = form.input :published_on
+    = form.input :tag_list, input_html: { class: 'selectize-tags' }
+    = form.input :active
+    = form.input :content, as: :redactor
+
+  = form.actions
