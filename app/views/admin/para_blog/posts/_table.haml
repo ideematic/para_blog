@@ -1,15 +1,39 @@
 = resources_table(model: model, component: component) do |table|
   = table.header do
+    = table.header_for(:active)
+    = table.header_for(:published_on)
     = table.header_for(:title)
     = table.header_for(:content)
     = table.header_for(:tags)
+    = table.header_for(:comments)
 
   = table.rows(resources) do |resource|
+    = table.data_for(resource, :active)
+    = table.data_for(resource, :published_on)
     = table.data_for(resource, :title)
     = table.data_for(resource, :content)
     = content_tag(:td) do
       - if (tags = resource.tag_list).present?
-        = tags.join(', ')
+        - tags.each do |tag|
+          %label.badge.alert-default= tag
+
       - else
         - #TODO I18n
         Aucun tag renseigné
+
+    = content_tag(:td) do
+      %label.badge.alert-success
+        = resource.comments.count
+        validés
+      %label.badge.alert-warning
+        = resource.comments.inactive.count
+        à vérifier
+
+:css
+  .text-success {
+    color: #3c763d;
+  }
+
+  .text-danger {
+    color: #a94442;
+  }
