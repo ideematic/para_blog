@@ -17,7 +17,7 @@ module ParaBlog
       gemfile_contents = File.read(Rails.root.join('Gemfile'))
 
       [
-        ['acts_as_taggable_on', '~> 3.4'],
+        ['acts_as_taggable_on'],
         ['ransack']
       ].each do |name, version|
         unless gemfile_contents.match(/gem ['"]#{ name }['"]/)
