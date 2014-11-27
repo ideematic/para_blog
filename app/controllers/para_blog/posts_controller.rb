@@ -3,7 +3,7 @@ module ParaBlog
 
     def index
       @q = ParaBlog::Post.active.ordered.search params[:q]
-      @posts = @q.result
+      @posts = @q.result.page(params[:page]).per 10
     end
 
     def show
