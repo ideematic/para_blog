@@ -22,12 +22,14 @@
         Aucun tag renseigné
 
     = content_tag(:td) do
-      %label.badge.alert-success
+      %label.badge.alert-default
         = resource.comments.count
-        validés
-      %label.badge.alert-warning
-        = resource.comments.inactive.count
-        à vérifier
+        au total
+
+      - if (unactive_comments = resource.comments.inactive).any?
+        %label.badge.alert-warning
+          = unactive_comments.count
+          à vérifier
 
 :css
   .text-success {

@@ -1,0 +1,18 @@
+.panel.panel-default.form-fields.push-down-5
+  .panel-heading
+    = form.reorder_anchor
+
+    %h3.panel-title
+      = link_to "##{ form.nested_resource_dom_id }", class: 'collapsed', data: { toggle: 'collapse', :'open-on-insert' => true } do
+        = form.nested_resource_name
+        %span.caret
+
+    %ul.panel-controls
+      %li
+        = form.remove_association_button
+
+    .clearfix
+
+  .panel-body.form-inputs.collapse{ id: form.nested_resource_dom_id }
+    = form.input :content
+    = form.input :active
